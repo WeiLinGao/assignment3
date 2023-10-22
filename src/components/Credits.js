@@ -9,10 +9,10 @@ import {Link} from 'react-router-dom';
 const Credits = (props) => {
 
   let creditsView = () => {
-    const { debits } = props;
-    return debits.map((debit) => {  // Extract "id", "amount", "description" and "date" properties of each debits JSON array element
-      let date = debit.date.slice(0,10);
-      return <li key={debit.id}>{debit.amount} {debit.description} {date}</li>
+    const { credits } = props;
+    return credits.map((credit) => 
+      let date = credit.date.slice(0,10);
+      return <li key={credit.id}>{credit.amount} {credit.description} {date}</li>
     });
 
   return (
