@@ -17,4 +17,14 @@ const Credits = (props) => {
   );
 }
 
+handleAddCredit = (newCredit) => {
+  // Add the new credit to the list
+  const updatedCreditList = [...this.props.credits, newCredit];
+  this.setState({ creditList: updatedCreditList });
+
+  // Update the account balance
+  const newAccountBalance = this.props.calculateAccountBalance();
+  this.setState({ accountBalance: newAccountBalance });
+};
+
 export default Credits;
