@@ -40,23 +40,19 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch('https://johnnylaicode.github.io/api/credits.json')
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ creditList: data });
-      })
-      .catch((error) => {
-        console.error('Error fetching credits data:', error);
-      });
+  // Fetch credits and debits data from API as you've done before
+  fetch('https://johnnylaicode.github.io/api/credits.json')
+    .then((response) => response.json())
+    .then((credit) => {
+      this.addCredit(credit);
+    });
 
-    fetch('https://johnnylaicode.github.io/api/debits.json')
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ debitList: data });
-      })
-      .catch((error) => {
-        console.error('Error fetching debits data:', error);
-      });
+  fetch('https://johnnylaicode.github.io/api/debits.json')
+    .then((response) => response.json())
+    .then((debit) => {
+      this.addDebit(debit);
+    });
+  
   }
 
 
