@@ -54,6 +54,11 @@ class App extends Component {
     });
   
   }
+  calculateAccountBalance = () => {
+  const totalCredits = this.state.creditList.reduce((total, credit) => total + credit.amount, 0);
+  const totalDebits = this.state.debitList.reduce((total, debit) => total + debit.amount, 0);
+  return totalCredits - totalDebits;
+};
 
 
   // Update state's currentUser (userName) after "Log In" button is clicked
