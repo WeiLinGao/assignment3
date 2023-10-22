@@ -27,6 +27,39 @@ class App extends Component {
       }
     };
   }
+  addCredit = (credit) => {
+    this.setState((prevState) => ({
+      creditList: [...prevState.creditList, credit],
+    }));
+  };
+
+  addDebit = (debit) => {
+    this.setState((prevState) => ({
+      debitList: [...prevState.debitList, debit],
+    }));
+  };
+
+  componentDidMount() {
+  // Fetch credits and debits data from API as you've done before
+  fetch('https://johnnylaicode.github.io/api/credits.json')
+    .then((response) => response.json())
+    .then((credit) => {
+      this.addCredit(credit);
+    });
+
+  fetch('https://johnnylaicode.github.io/api/debits.json')
+    .then((response) => response.json())
+    .then((debit) => {
+      this.addDebit(debit);
+    });
+  
+  }
+  calculateAccountBalance = () => {
+  const totalCredits = this.state.creditList.reduce((total, credit) => total + credit.amount, 0);
+  const totalDebits = this.state.debitList.reduce((total, debit) => total + debit.amount, 0);
+  return totalCredits - totalDebits;
+};
+
 
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
