@@ -10,6 +10,7 @@ const Credits = (props) => {
   return (
     <div>
       <h1>Credits</h1>
+      Balance: {this.props.accountBalance}
       <br/>
       <Link to="/">Return to Home</Link>
     </div>
