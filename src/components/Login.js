@@ -48,11 +48,11 @@ class LogIn extends Component {
         
         <form onSubmit={this.handleSubmit}>
           <div>
-            <label>User Name</label>
+            <label>User Name1</label>
             <input type="text" name="userName" defaultValue={this.props.user.userName} onChange={this.handleChange} />
           </div>
           <div>
-            <label>Password</label>
+            <label>Password2</label>
             <input type="password" name="password" />
           </div>
           <button>Log In</button>
