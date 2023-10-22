@@ -27,6 +27,38 @@ class App extends Component {
       }
     };
   }
+  addCredit = (credit) => {
+    this.setState((prevState) => ({
+      creditList: [...prevState.creditList, credit],
+    }));
+  };
+
+  addDebit = (debit) => {
+    this.setState((prevState) => ({
+      debitList: [...prevState.debitList, debit],
+    }));
+  };
+
+  componentDidMount() {
+    fetch('https://johnnylaicode.github.io/api/credits.json')
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ creditList: data });
+      })
+      .catch((error) => {
+        console.error('Error fetching credits data:', error);
+      });
+
+    fetch('https://johnnylaicode.github.io/api/debits.json')
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ debitList: data });
+      })
+      .catch((error) => {
+        console.error('Error fetching debits data:', error);
+      });
+  }
+
 
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
