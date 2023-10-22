@@ -25,7 +25,8 @@ const Credits = (props) => {
         <input type="number" name="amount" />
         <button type="submit">Add Credit</button>
       </form>
-      Balance: {this.props.accountBalance}
+      <br/>
+        Balance: {this.props.accountBalance}
       <br/>
       <Link to="/">Return to Home</Link>
     </div>
