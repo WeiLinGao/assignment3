@@ -23,7 +23,7 @@ class App extends Component {
       debitList: [],
       currentUser: {
         userName: 'Joe Smith',
-        memberSince: '11/22/99',
+        memberSince: '11/23/99',
       }
     };
   }
@@ -83,11 +83,11 @@ class App extends Component {
     return (
       <Router basename="/assignment3">
         <div>
-          <Route exact path="/" render={HomeComponent}/>
-          <Route exact path="/userProfile" render={UserProfileComponent}/>
-          <Route exact path="/login" render={LogInComponent}/>
-          <Route exact path="/credits" render={CreditsComponent}/>
-          <Route exact path="/debits" render={DebitsComponent}/>
+          <Route exact path="/assignment3/" render={HomeComponent} />
+          <Route exact path="/assignment3/userProfile" render={UserProfileComponent} />
+          <Route exact path="/assignment3/login" render={LogInComponent} />
+          <Route exact path="/assignment3/credits" render={CreditsComponent} />
+          <Route exact path="/assignment3/debits" render={DebitsComponent} />
         </div>
       </Router>
     );
